@@ -36,4 +36,5 @@ Set up state to use for animation. Effect and setEffect.
 
 Card will play flip animation when clicked.
 
-Problem: it disapears completely. 
+Problem: it disapears completely before showing flipped card:
+Solution (later): Set back of card to flip 

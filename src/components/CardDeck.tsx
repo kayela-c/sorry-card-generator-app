@@ -85,7 +85,7 @@ const CardDeck = () => {
               </div>
             </div>
 
-            <p className="flex -scale-100 gap-3 text-xs">
+            <p className="flex -scale-100 justify-between gap-3 text-xs">
               {card.id !== "sorry" && (
                 <span
                   className={
