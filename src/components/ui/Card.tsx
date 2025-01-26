@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import clsx from "clsx";
 
 type DeckArry = {
@@ -14,16 +14,12 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({ drawnCard, click }) => {
-  const [effect, setEffect] = useState(false);
-
   return (
     <div>
       {" "}
       <div className="">
         <button
           className={clsx(
-            effect &&
-              "animate-hflip transition-all duration-300 ease-in-out [backface-visibility:hidden] [transform-style:preserve-3d]",
             click !== 0
               ? "card my-3 flex h-96 w-60 justify-between bg-zinc-50 p-3 drop-shadow-xl"
               : "card my-3 flex h-96 w-60 justify-between bg-gradient-to-br from-yellow-300 via-blue-700 to-red-700 p-3 drop-shadow-xl",
