@@ -1,0 +1,96 @@
+import React, { useState } from "react";
+import clsx from "clsx";
+
+type DeckArry = {
+  id: string;
+  title: string;
+  rule: string;
+  probability: number;
+};
+
+interface CardProps {
+  drawnCard: DeckArry;
+  click: number;
+}
+
+const Card: React.FC<CardProps> = ({ drawnCard, click }) => {
+  const [effect, setEffect] = useState(false);
+
+  return (
+    <div>
+      {" "}
+      <div className="">
+        <button
+          className={clsx(
+            effect &&
+              "animate-hflip transition-all duration-300 ease-in-out [backface-visibility:hidden] [transform-style:preserve-3d]",
+            click !== 0
+              ? "card my-3 flex h-96 w-60 justify-between bg-zinc-50 p-3 drop-shadow-xl"
+              : "card my-3 flex h-96 w-60 justify-between bg-gradient-to-br from-yellow-300 via-blue-700 to-red-700 p-3 drop-shadow-xl",
+          )}
+          key={drawnCard.id}
+        >
+          <p className="flex gap-3 text-xs">
+            <span
+              className={
+                click !== 0
+                  ? "hidden"
+                  : "-translate-x-16 translate-y-32 -rotate-90 text-9xl font-bold text-white"
+              }
+            >
+              Sorry
+            </span>
+            {drawnCard.id !== "sorry" && (
+              <span
+                className={clsx(
+                  click !== 0
+                    ? "rounded-e-3xl rounded-tl-3xl bg-black px-4 py-4 font-bold text-white"
+                    : "hidden",
+                )}
+              >
+                {drawnCard.title}
+              </span>
+            )}
+            {drawnCard.rule}
+          </p>
+          <div
+            className={clsx(
+              click !== 0
+                ? "mx-auto flex size-44 flex-col justify-center rounded-full border-4 border-black bg-gradient-to-b from-yellow-300 via-blue-600 to-red-600"
+                : "hidden",
+            )}
+          >
+            <div className="mx-auto flex size-36 flex-col justify-center rounded-full border-4 border-black bg-gradient-to-br from-black via-zinc-500 via-60% to-black text-center">
+              <p
+                className={clsx(
+                  drawnCard.id !== "sorry"
+                    ? "my-auto text-8xl font-bold text-white"
+                    : "my-auto text-5xl font-bold text-white",
+                )}
+              >
+                {drawnCard.title}
+              </p>
+            </div>
+          </div>
+
+          <p className="flex -scale-100 justify-between gap-3 text-xs">
+            {drawnCard.id !== "sorry" && (
+              <span
+                className={
+                  click !== 0
+                    ? "rounded-e-3xl rounded-tl-3xl bg-black px-4 py-4 font-bold text-white"
+                    : "hidden"
+                }
+              >
+                {drawnCard.title}
+              </span>
+            )}
+            {drawnCard.rule}
+          </p>
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default Card;
