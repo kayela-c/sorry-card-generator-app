@@ -20,22 +20,11 @@ const Card: React.FC<CardProps> = ({ drawnCard, click }) => {
       <div className="">
         <button
           className={clsx(
-            click !== 0
-              ? "card my-3 flex h-96 w-60 justify-between bg-zinc-50 p-3 drop-shadow-xl"
-              : "card my-3 flex h-96 w-60 justify-between bg-gradient-to-br from-yellow-300 via-blue-700 to-red-700 p-3 drop-shadow-xl",
+            "card my-3 flex h-96 w-60 justify-between bg-zinc-50 p-3 drop-shadow-xl",
           )}
           key={drawnCard.id}
         >
           <p className="flex gap-3 text-xs">
-            <span
-              className={
-                click !== 0
-                  ? "hidden"
-                  : "-translate-x-16 translate-y-32 -rotate-90 text-9xl font-bold text-white"
-              }
-            >
-              Sorry
-            </span>
             {drawnCard.id !== "sorry" && (
               <span
                 className={clsx(
