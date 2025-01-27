@@ -39,6 +39,6 @@ Card will play flip animation when clicked.
 Problem: it disapears completely before showing flipped card:
 Solution (later): Set back of card to flip
 
-Extra: There are more ones than the rest of the cards. How would I use that in my randomize function without just adding an extra to the pile?
+[X]Extra: There are more ones than the rest of the cards. How would I use that in my randomize function without just adding an extra to the pile?
 
-Extra: How do I set a fixed number of cards (45) or fixed number of times a card can be pulled using the quantity property?
+

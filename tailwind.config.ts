@@ -8,6 +8,19 @@ export default {
       fontFamily: {
         sans: ["var(--font-geist-sans)", ...fontFamily.sans],
       },
+      textShadow: {
+        double: "2px 2px 0px black, 4px 4px 0px white",
+      },
+      textStrokeWidth: {
+        "1": "1px",
+        "2": "2px",
+      },
+      backgroundImage: {
+        "conic-four":
+          "conic-gradient(yellow 0% 15%, green 15% 37%, red 37% 63%, blue 63% 85%, yellow 85% 100%)",
+        "slash-four":
+          "linear-gradient(to bottom right, yellow 0% 24%, green 25% 49%, red 50% 74%, blue 75% 100%)",
+      },
       keyframes: {
         hflip: {
           "0%": { transform: "rotateY(0deg)" },

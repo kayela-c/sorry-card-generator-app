@@ -12,12 +12,6 @@ export const cardDeck = [
     probability: 5,
   },
   {
-    id: "one2",
-    title: "1",
-    rule: "Move a pawn from START or if in play, move forward 1 space.",
-    probability: 5,
-  },
-  {
     id: "two",
     title: "2",
     rule: "Move a pawn from START or if in play, move forward 2 spaces.",

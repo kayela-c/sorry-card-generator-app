@@ -28,23 +28,24 @@ const Card: React.FC<CardProps> = ({ drawnCard, click }) => {
           key={drawnCard.id}
         >
           <p className="flex gap-3 text-xs">
+            {/* upper left corner of card */}
             {drawnCard.id !== "sorry" && (
               <span
                 className={clsx(
                   click !== 0
-                    ? "rounded-e-3xl rounded-tl-3xl bg-black px-4 py-4 font-bold text-white"
+                    ? "size-[48px] rounded-e-3xl rounded-tl-3xl bg-black p-4 font-bold text-white"
                     : "hidden",
                 )}
               >
                 {drawnCard.title}
               </span>
             )}
-            {drawnCard.rule}
+            <div className="min-w-[155px] self-center">{drawnCard.rule}</div>
           </p>
           <div
             className={clsx(
               click !== 0
-                ? "mx-auto flex size-44 flex-col justify-center rounded-full border-4 border-black bg-gradient-to-b from-yellow-300 via-blue-600 to-red-600 transition-all duration-700 ease-in-out"
+                ? "bg-conic-four mx-auto flex size-44 flex-col justify-center rounded-full border-4 border-black transition-all duration-700 ease-in-out"
                 : "hidden",
             )}
           >
@@ -61,20 +62,21 @@ const Card: React.FC<CardProps> = ({ drawnCard, click }) => {
             </div>
           </div>
 
-          <p className="flex -scale-100 justify-between gap-3 text-xs">
+          <div className="flex -scale-100 justify-between gap-3 text-xs">
+            {/* lower right corner of card */}
             {drawnCard.id !== "sorry" && (
               <span
                 className={
                   click !== 0
-                    ? "rounded-e-3xl rounded-tl-3xl bg-black px-4 py-4 font-bold text-white"
+                    ? "size-[48px] rounded-e-3xl rounded-tl-3xl bg-black p-4 font-bold text-white"
                     : "hidden"
                 }
               >
                 {drawnCard.title}
               </span>
             )}
-            {drawnCard.rule}
-          </p>
+            <div className="min-w-[155px] self-center">{drawnCard.rule}</div>
+          </div>
         </button>
       </div>
     </div>
