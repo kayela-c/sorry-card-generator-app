@@ -20,7 +20,10 @@ const Card: React.FC<CardProps> = ({ drawnCard, click }) => {
       <div className="">
         <button
           className={clsx(
-            "card my-3 flex h-96 w-60 justify-between bg-zinc-50 p-3 drop-shadow-xl",
+            "card my-3 flex h-96 w-60 justify-between bg-zinc-50 p-3 drop-shadow-xl transition-all duration-500",
+            //click !== 0 && "animate-[hflip_1s_ease-in-out] hover:scale-95",
+            click !== 0 &&
+              "animate-[shake_0.5s_ease-in-out] opacity-100 hover:scale-95",
           )}
           key={drawnCard.id}
         >
