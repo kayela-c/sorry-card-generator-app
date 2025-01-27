@@ -72,13 +72,13 @@ const ExpCardDeck = () => {
         className={clsx(
           "",
           // for example animation class:
-          //click !== 0 &&
-          //"animate-hflip transition-all duration-300 ease-in-out",
+       
+         
         )}
       >
         {/* If you haven't drawn a card yet (click=0), show something else */}
         {click === 0 && (
-          <div className="card my-3 flex h-96 w-60 justify-between bg-gradient-to-br from-yellow-300 via-blue-700 to-red-700 p-3 text-9xl font-bold text-black drop-shadow-xl">
+          <div className="card my-3 flex h-96 w-60 justify-between bg-gradient-to-br from-yellow-300 via-blue-700 to-red-700 p-3 text-9xl font-bold text-black drop-shadow-xl transition-all duration-700 ease-in-out">
             <div className="translate-y-44 -rotate-90">Sorry</div>
           </div>
         )}

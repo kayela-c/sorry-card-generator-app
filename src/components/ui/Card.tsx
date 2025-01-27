@@ -41,7 +41,7 @@ const Card: React.FC<CardProps> = ({ drawnCard, click }) => {
           <div
             className={clsx(
               click !== 0
-                ? "mx-auto flex size-44 flex-col justify-center rounded-full border-4 border-black bg-gradient-to-b from-yellow-300 via-blue-600 to-red-600"
+                ? "mx-auto flex size-44 flex-col justify-center rounded-full border-4 border-black bg-gradient-to-b from-yellow-300 via-blue-600 to-red-600 transition-all duration-700 ease-in-out"
                 : "hidden",
             )}
           >
