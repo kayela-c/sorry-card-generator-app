@@ -1,3 +1,5 @@
+import React from "react";
+
 import "@/styles/globals.css";
 import { Theme } from "@radix-ui/themes";
 
@@ -14,7 +16,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${GeistSans.variable}`}>
+    <html data-theme='cymk' lang="en" className={`${GeistSans.variable}`}>
       <body>
         <Theme>{children}</Theme>
       </body>

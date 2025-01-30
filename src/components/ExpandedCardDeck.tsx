@@ -1,4 +1,6 @@
 "use client";
+import React from "react";
+
 import clsx from "clsx";
 import { useState } from "react";
 import { cardDeck } from "@/data/cards"; // This is your original array

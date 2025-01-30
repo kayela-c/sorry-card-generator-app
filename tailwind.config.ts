@@ -3,6 +3,9 @@ import { fontFamily } from "tailwindcss/defaultTheme";
 
 export default {
   content: ["./src/**/*.tsx"],
+  daisyui: {
+    themes: ["light", "dark", "cymk"],
+  },
   theme: {
     extend: {
       fontFamily: {
