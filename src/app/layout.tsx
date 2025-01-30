@@ -1,10 +1,11 @@
 import React from "react";
 
 import "@/styles/globals.css";
-import { Theme } from "@radix-ui/themes";
 
 import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Sorry Card Generator",
@@ -16,9 +17,11 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html data-theme='cymk' lang="en" className={`${GeistSans.variable}`}>
+    <html data-theme="cmyk" lang="en" className={`${GeistSans.variable}`}>
       <body>
-        <Theme>{children}</Theme>
+        <Header />
+        {children}
+        <Footer />
       </body>
     </html>
   );
