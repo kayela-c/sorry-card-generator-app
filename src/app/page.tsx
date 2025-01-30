@@ -1,4 +1,4 @@
-import ExpCardDeck from "@/components/ExpandedCardDeck";
+import ExpCardDeck from "@/components/ui/ExpCardDeck";
 import React from "react";
 export default function HomePage() {
   return (
