@@ -6,14 +6,10 @@ import Card from "./Card";
 import { useDeck } from "@/hooks/useDeck";
 
 const DeckUI = () => {
-  const { deck, drawnCard, click, resetDeck, drawCard } = useDeck();
+  const { deck, drawnCard, click, drawCard } = useDeck();
 
   return (
-    <div className="grid grid-cols-1 gap-4 p-4">
-      <button onClick={resetDeck} className="btn btn-primary text-white">
-        Reset Deck
-      </button>
-
+    <div className="p-4">
       <button
         onClick={drawCard}
         className={clsx(

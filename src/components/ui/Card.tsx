@@ -20,7 +20,7 @@ const Card: React.FC<CardProps> = ({ drawnCard, click }) => {
       <div className="">
         <button
           className={clsx(
-            "card my-3 flex h-96 w-60 justify-between bg-zinc-50 p-3 drop-shadow-xl transition-all duration-500",
+            "card my-3 flex h-96 w-60 justify-between bg-base-100 p-3 drop-shadow-xl transition-all duration-500",
             //click !== 0 && "animate-[hflip_1s_ease-in-out] hover:scale-95",
             click !== 0 &&
               "animate-[shake_0.5s_ease-in-out] opacity-100 hover:scale-95",
@@ -33,7 +33,7 @@ const Card: React.FC<CardProps> = ({ drawnCard, click }) => {
               <span
                 className={clsx(
                   click !== 0
-                    ? "size-[48px] rounded-e-3xl rounded-tl-3xl bg-black p-4 font-bold text-white"
+                    ? "size-[48px] rounded-e-3xl rounded-tl-3xl bg-accent p-4 font-bold text-accent-content"
                     : "hidden",
                 )}
               >
@@ -45,7 +45,7 @@ const Card: React.FC<CardProps> = ({ drawnCard, click }) => {
           <div
             className={clsx(
               click !== 0
-                ? "bg-conic-four mx-auto flex size-44 flex-col justify-center rounded-full border-4 border-black transition-all duration-700 ease-in-out"
+                ? "mx-auto flex size-44 flex-col justify-center rounded-full border-4 border-black bg-conic-four transition-all duration-700 ease-in-out"
                 : "hidden",
             )}
           >
@@ -68,7 +68,7 @@ const Card: React.FC<CardProps> = ({ drawnCard, click }) => {
               <span
                 className={
                   click !== 0
-                    ? "size-[48px] rounded-e-3xl rounded-tl-3xl bg-black p-4 font-bold text-white"
+                    ? "size-[48px] rounded-e-3xl rounded-tl-3xl bg-accent p-4 font-bold text-accent-content"
                     : "hidden"
                 }
               >

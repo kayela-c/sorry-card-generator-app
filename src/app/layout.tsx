@@ -4,8 +4,8 @@ import "@/styles/globals.css";
 
 import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Navbar from "@/components/ui/Navbar";
 
 export const metadata: Metadata = {
   title: "Sorry Card Generator",
@@ -18,10 +18,14 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html data-theme="cmyk" lang="en" className={`${GeistSans.variable}`}>
-      <body>
-        <Header />
+      <body className="flex min-h-screen flex-col justify-between bg-base-300 text-base-content">
+        <div className="p-4">
+          <Navbar />
+        </div>
         {children}
-        <Footer />
+        <div className="p-4">
+          <Footer />
+        </div>
       </body>
     </html>
   );
