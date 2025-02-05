@@ -4,6 +4,24 @@ import clsx from "clsx";
 import Image from "next/image";
 import Card from "./Card";
 import { useDeck } from "@/hooks/useDeck";
+import ResetBtn from "./ResetBtn";
+
+//reload button reloads the page when clicked
+export const ReloadBtn = () => {
+  const reloadPage = () => {
+    window.location.reload();
+  };
+  return (
+    <button
+      onClick={reloadPage}
+      className="btn btn-primary text-primary-content"
+    >
+      Reset Deck
+    </button>
+  );
+};
+
+//reset button needs to use state management to reset the deck
 
 const DeckUI = () => {
   const { deck, drawnCard, click, drawCard } = useDeck();
@@ -30,7 +48,9 @@ const DeckUI = () => {
           </div>
         ) : drawnCard ? (
           <Card drawnCard={drawnCard} click={click} />
-        ) : null}
+        ) : (
+          <ReloadBtn />
+        )}
       </button>
     </div>
   );
