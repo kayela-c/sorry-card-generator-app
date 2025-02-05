@@ -28,3 +28,16 @@ export function getDataSlice(data: Data, levelDifficulty: number) {
   return dataSlice;
 }
 
+export function getEmojisArray(data: Data) {
+  // Step 1: Create a new variable, "pairedEmojisArray". This variable should be an array that includes each emoji object from the "data" array twice.
+  const pairedEmojisArray = [...data, ...data];
+
+  // Step 2: Use the Fisher-Yates algorithm to shuffle "pairedEmojisArray"
+  for (let i = pairedEmojisArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [pairedEmojisArray[i], pairedEmojisArray[j]] = [pairedEmojisArray[j], pairedEmojisArray[i]];
+  }
+
+  // Step 3: Return the shuffled array
+  return pairedEmojisArray;
+}

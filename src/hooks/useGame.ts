@@ -1,6 +1,10 @@
 "use client";
 import { useState } from "react";
-import { getDataSlice, getRandomIndex } from "@/hooks/RandomIndex";
+import {
+  getDataSlice,
+  getEmojisArray,
+  getRandomIndex,
+} from "@/hooks/RandomIndex";
 
 export function useGame(levelDifficulty: number) {
   const [emojisData, setEmojisData] = useState<
@@ -30,11 +34,17 @@ export function useGame(levelDifficulty: number) {
       //slice the data to get the first 5 emojis
       const dataSlice = getDataSlice(data, levelDifficulty);
 
+      // Create paired and shuffled emojis array
+      const pairedEmojisArray = getEmojisArray(dataSlice);
       //set the sliced data to the emojis
-      setEmojisData(dataSlice);
+      setEmojisData(pairedEmojisArray);
 
       //console log the data sample
       console.log(getRandomIndex(data, levelDifficulty));
+
+      //console log the data sample
+      console.log(pairedEmojisArray);
+
       //catch any errors and log them to the console
     } catch (error) {
       console.error(error);
