@@ -4,8 +4,8 @@ import { FormProps } from "@/types/cardTypes";
 
 const Form = ({ handleClick }: FormProps) => {
   return (
-    <div className="">
-      <RegularButton handleClick={handleClick}>Submit</RegularButton>
+    <div className="flex justify-center">
+      <RegularButton handleClick={handleClick}>Start</RegularButton>
     </div>
   );
 };
