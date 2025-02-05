@@ -1,7 +1,5 @@
-import { DeckArry } from "@/types/cardTypes";
+import { DeckArry } from "@/types/Types";
 //incomplete refactor
-
-
 
 // 1. buildDeck helper
 export function buildDeck(cards: DeckArry[]): DeckArry[] {

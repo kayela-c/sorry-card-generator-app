@@ -20,4 +20,5 @@ export interface MemoryCardProps {
   //card: DeckArry;
   //flipped: boolean;
   handleClick: () => void;
+  data: any;
 }

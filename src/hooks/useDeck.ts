@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { cardDeck } from "@/data/cards";
-import { DeckArry } from "@/types/cardTypes";
+import { DeckArry } from "@/types/Types";
 
 // 1. Helper to build deck with probabilities
 function buildDeck(cards: DeckArry[]): DeckArry[] {

@@ -58,7 +58,7 @@ const MemoryDeckUI = () => {
           Memory
         </h1>
         {!isGameOn && <Form handleClick={startGame} />}
-        {isGameOn && <MemoryCard handleClick={turnCard} />}
+        {isGameOn && <MemoryCard handleClick={turnCard} data={emojisData} />}
       </main>
     </>
   );

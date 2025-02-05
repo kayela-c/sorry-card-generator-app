@@ -1,5 +1,5 @@
 import React from "react";
-import { ButtonProps } from "@/types/cardTypes";
+import { ButtonProps } from "@/types/Types";
 
 export const RegularButton = ({ children, handleClick }: ButtonProps) => {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 import { RegularButton } from "../common/buttons";
-import { FormProps } from "@/types/cardTypes";
+import { FormProps } from "@/types/Types";
 
 const Form = ({ handleClick }: FormProps) => {
   return (
