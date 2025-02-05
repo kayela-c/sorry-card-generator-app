@@ -24,5 +24,5 @@ export interface MemoryCardProps {
   //card: DeckArry;
   //flipped: boolean;
   handleClick: () => void;
-  data: { name: string; htmlCode: Array<string> };
+  data: { name: string; htmlCode: string[] }[];
 }

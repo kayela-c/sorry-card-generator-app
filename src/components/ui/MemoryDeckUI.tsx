@@ -5,10 +5,9 @@ import Form from "./Form";
 import MemoryCard from "./MemoryCard";
 import { levelDifficulty } from "@/utils/settings";
 
-
- const MemoryDeckUI: React.FC = () => {
+export const MemoryDeckUI: React.FC = () => {
   const { isGameOn, emojisData, startGame } = useGame(levelDifficulty);
-  
+
   //function to turn the card
   function turnCard() {
     alert("Memory card clicked");
@@ -22,12 +21,14 @@ import { levelDifficulty } from "@/utils/settings";
           Memory
         </h1>
         {!isGameOn && <Form handleClick={startGame} />}
-        {isGameOn && emojisData.map((emoji, index) => (
-          <MemoryCard key={index} handleClick={turnCard} data={emoji} />
-        ))}
+        {isGameOn && (
+          <ul className="grid grid-cols-5 gap-4 px-4">
+            {emojisData.map((emoji, index) => (
+              <MemoryCard key={index} handleClick={turnCard} data={[emoji]} />
+            ))}
+          </ul>
+        )}
       </main>
     </>
   );
 };
-
-export default MemoryDeckUI;

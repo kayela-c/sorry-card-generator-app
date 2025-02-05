@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import { getDataSlice, getRandomIndex } from "@/hooks/RandomIndex";
 
