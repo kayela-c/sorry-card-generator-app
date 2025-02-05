@@ -1,7 +1,7 @@
 import React from "react";
-import { ButtonProps } from "@/types/cardTypes";
+import { MemoryCardProps } from "@/types/cardTypes";
 
-export default function MemoryCard({ handleClick }: ButtonProps) {
+export default function MemoryCard({ handleClick }: MemoryCardProps) {
   const emojiArray = [
     "🐶",
     "🐷",

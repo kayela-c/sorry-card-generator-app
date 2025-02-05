@@ -1,8 +1,8 @@
 import React from "react";
 import { RegularButton } from "../common/buttons";
-import { ButtonProps } from "@/types/cardTypes";
+import { FormProps } from "@/types/cardTypes";
 
-const Form = ({ handleClick }: ButtonProps) => {
+const Form = ({ handleClick }: FormProps) => {
   return (
     <div className="">
       <RegularButton handleClick={handleClick}>Submit</RegularButton>
