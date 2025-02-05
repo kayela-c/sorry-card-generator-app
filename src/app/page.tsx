@@ -1,4 +1,4 @@
-import MemoryDeckUI from "@/components/ui/MemoryDeckUI";
+import { MemoryDeckUI } from "@/components/ui/MemoryDeckUI";
 import SorryDeckUI from "@/components/ui/SorryDeckUi";
 import React from "react";
 

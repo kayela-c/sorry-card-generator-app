@@ -7,6 +7,10 @@ export type DeckArry = {
 
 export type Click = number;
 
+export type Data = [{ name: string; htmlCode: Array<string> }];
+
+export type Event = () => void;
+
 export interface ButtonProps {
   children: React.ReactNode;
   handleClick: () => void;
@@ -20,5 +24,5 @@ export interface MemoryCardProps {
   //card: DeckArry;
   //flipped: boolean;
   handleClick: () => void;
-  data: any;
+  data: { name: string; htmlCode: Array<string> };
 }
