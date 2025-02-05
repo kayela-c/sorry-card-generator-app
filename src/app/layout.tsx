@@ -4,8 +4,8 @@ import "@/styles/globals.css";
 
 import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
-import Footer from "@/components/Footer";
-import Navbar from "@/components/ui/Navbar";
+import Footer from "@/components/common/Footer";
+import Navbar from "@/components/common/Navbar";
 
 export const metadata: Metadata = {
   title: "Sorry Card Generator",

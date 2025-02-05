@@ -7,3 +7,8 @@ export type DeckArry = {
 
 
 export type Click = number;
+
+export interface ButtonProps {
+  children: React.ReactNode;
+  handleClick: () => void;
+}

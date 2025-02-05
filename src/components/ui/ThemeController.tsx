@@ -19,7 +19,7 @@ const ThemeController = () => {
         </div>
         <ul
           tabIndex={0}
-          className="dropdown dropdown-content z-[1] max-h-60 w-52 overflow-y-auto rounded-box bg-base-300 p-2 shadow-2xl"
+          className="dropdown dropdown-content z-[1] max-h-60 w-52 rounded-box bg-base-300 p-2 shadow-2xl"
         >
           {
             // Theme options go here

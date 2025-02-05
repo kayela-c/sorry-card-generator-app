@@ -1,9 +1,13 @@
-import DeckUI from "@/components/ui/DeckUi";
+import MemoryDeckUI from "@/components/ui/MemoryDeckUI";
+import SorryDeckUI from "@/components/ui/SorryDeckUi";
 import React from "react";
+
 export default function HomePage() {
   return (
     <main className="flex flex-col items-center justify-center">
-      <DeckUI />
+      {/* render deck ui */}
+      {/* <MemoryDeckUI /> */}
+      <SorryDeckUI />
     </main>
   );
 }

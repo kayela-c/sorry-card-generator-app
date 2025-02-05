@@ -1,5 +1,5 @@
 import React from "react";
-import ResetBtn from "./ui/ResetBtn";
+import ResetBtn from "./common/ResetBtn";
 import { PiBell } from "react-icons/pi";
 
 const Header = () => {

@@ -29,7 +29,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu dropdown-content z-[1] mt-3 max-h-60 w-52 overflow-y-auto rounded-box bg-base-300 p-2 text-base-content shadow-2xl"
+              className="menu dropdown-content z-[1] mt-3 w-52 rounded-box bg-base-300 p-2 text-base-content shadow-2xl"
             >
               {
                 // Theme options go here
@@ -40,7 +40,7 @@ const Navbar = () => {
                       key={theme}
                       type="radio"
                       name="theme-dropdown"
-                      className="theme-controller btn btn-ghost btn-sm btn-block justify-start"
+                      className="theme-controller btn btn-ghost btn-sm btn-block justify-start capitalize"
                       aria-label={theme}
                       value={theme}
                     />
