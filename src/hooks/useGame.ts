@@ -4,13 +4,15 @@ import {
   getDataSlice,
   getEmojisArray,
   getRandomIndex,
-} from "@/hooks/RandomIndex";
+} from "@/hooks/gameLogic";
 
 export function useGame(levelDifficulty: number) {
   const [emojisData, setEmojisData] = useState<
     Array<{ name: string; htmlCode: string[] }>
   >([]);
   const [isGameOn, setIsGameOn] = useState(false);
+  const [selectedCards, setSelectedCards] = useState<number[]>([]);
+  const [matchedCards, setMatchedCards] = useState<number[]>([]);
 
   //async function to fetch data from the api
   const startGame = async () => {
@@ -52,5 +54,14 @@ export function useGame(levelDifficulty: number) {
     //set the game to true after the data has been fetched
     setIsGameOn(true);
   };
-  return { isGameOn, emojisData, isGameOnData: true, startGame };
+  return {
+    isGameOn,
+    emojisData,
+    isGameOnData: true,
+    startGame,
+    selectedCards,
+    matchedCards,
+    setSelectedCards,
+    setMatchedCards,
+  };
 }

@@ -4,14 +4,11 @@ import React from "react";
 import Form from "./Form";
 import MemoryCard from "./MemoryCard";
 import { levelDifficulty } from "@/utils/settings";
+import { turnCard } from "@/hooks/gameLogic";
 
 export const MemoryDeckUI: React.FC = () => {
-  const { isGameOn, emojisData, startGame } = useGame(levelDifficulty);
-
-  //function to turn the card
-  function turnCard() {
-    alert("Memory card clicked");
-  }
+  const { isGameOn, emojisData, startGame, selectedCards, matchedCards } =
+    useGame(levelDifficulty);
 
   //render the component with the state data
   return (
@@ -24,7 +21,13 @@ export const MemoryDeckUI: React.FC = () => {
         {isGameOn && (
           <ul className="grid grid-cols-5 gap-4 px-4">
             {emojisData.map((emoji, index) => (
-              <MemoryCard key={index} handleClick={turnCard} data={[emoji]} />
+              <MemoryCard
+                key={index}
+                handleClick={turnCard}
+                data={[emoji]}
+                selectedCards={selectedCards}
+                matchedCards={matchedCards}
+              />
             ))}
           </ul>
         )}
