@@ -1,1 +1,1 @@
-export const levelDifficulty = 5;
+export const levelDifficulty: number = 5;

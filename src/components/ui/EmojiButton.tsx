@@ -1,12 +1,5 @@
-import { MatchedCards, SelectedCards } from "@/types/Types";
 import React from "react";
-
-interface EmojiButtonProps {
-  content: string;
-  selectedCardEntry: SelectedCards;
-  matchedCardEntry: MatchedCards;
-  handleClick: () => void;
-}
+import { EmojiButtonProps } from "@/types/Types";
 
 const EmojiButton: React.FC<EmojiButtonProps> = ({
   content,

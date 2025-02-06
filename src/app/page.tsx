@@ -6,8 +6,8 @@ export default function HomePage() {
   return (
     <main className="flex flex-col items-center justify-center">
       {/* render deck ui */}
-      <MemoryDeckUI />
-      {/* <SorryDeckUI /> */}
+      {/* <MemoryDeckUI /> */}
+      <SorryDeckUI />
     </main>
   );
 }

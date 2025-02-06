@@ -11,11 +11,12 @@ export type Data = [{ name: string; htmlCode: Array<string> }];
 
 export type Event = () => void;
 
+//might be redundant
 export type Emoji = { htmlCode: string[]; name: string; index: number };
 
-export type SelectedCards = { name: string; index: number }[];
+export type Card = { name: string; index: number };
 
-export type MatchedCards = { name: string; index: number }[];
+export type CardClick = (name: string, index: number) => void;
 
 export interface ButtonProps {
   children: React.ReactNode;
@@ -27,8 +28,20 @@ export interface FormProps {
 }
 
 export interface MemoryCardProps {
-  selectedCards: { name: string; index: number }[];
-  matchedCards: { name: string; index: number }[];
-  handleClick: (name: string, index: number) => void;
-  data: { name: string; htmlCode: string[] }[];
+  //selectedCards: SelectedCards;
+  //matchedCards: MatchedCards;
+  handleClick: CardClick;
+  //data: Emoji[];
+}
+
+export interface EmojiButtonProps {
+
+  content: string;
+
+  selectedCardEntry: number;
+
+  matchedCardEntry: number;
+
+  handleClick: () => void;
+
 }

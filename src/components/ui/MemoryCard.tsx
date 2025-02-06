@@ -1,38 +1,37 @@
 "use client"; // This directive indicates that the file is a client-side component in Next.js
 
 import React from "react"; // Import React library
-import { MemoryCardProps, Emoji } from "@/types/Types"; // Import the MemoryCardProps and Emoji types from the specified path
+import { Data, CardClick } from "@/types/Types"; // Import the Data and CardClick types from the specified path
 import { decodeEntity } from "html-entities"; // Import the decodeEntity function from the html-entities library
-import EmojiButton from "./EmojiButton";
+import EmojiButton from "./EmojiButton"; // Import the EmojiButton component
+import { useGameStore } from "@/stores/gameStore"; // Import the useGameStore hook
 
 // Define the MemoryCard component, which takes props of type MemoryCardProps
 export default function MemoryCard({
   handleClick,
   data,
-  selectedCards,
-  matchedCards,
-}: MemoryCardProps) {
+}: {
+  handleClick: CardClick;
+  data: Data;
+}) {
+  const { selectedCards, matchedCards } = useGameStore();
   // Map over the data array to create a list of emoji elements
-  const emojiEl = data.map((emoji: Emoji, index: number) => {
+  const emojiEl = data.map((emoji, index) => {
     // Check if the card is selected
     const selectedCardEntry = selectedCards.find(
-      (selectedCard) =>
-        selectedCard.name === emoji.name && selectedCard.index === emoji.index,
+      (emoji) => emoji.index === index,
     );
-
-    // Check if the card is matched
     const matchedCardEntry = matchedCards.find(
-      (matchedCard) =>
-        matchedCard.name === emoji.name && matchedCard.index === emoji.index,
+      (emoji) => emoji.index === index,
     );
 
     return (
-      <li key={`${emoji.name}-${emoji.index}`}>
+      <li key={index}>
         <EmojiButton
           content={decodeEntity(emoji.htmlCode[0])}
           selectedCardEntry={selectedCardEntry}
           matchedCardEntry={matchedCardEntry}
-          handleClick={() => handleClick(emoji.name, emoji.index)}
+          handleClick={() => handleClick(emoji.name, index)}
         />
       </li>
     );
