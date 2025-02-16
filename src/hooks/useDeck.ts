@@ -1,11 +1,10 @@
+import { useState } from "react";
 import { cardDeck } from "@/data/cards";
 import { DeckArry } from "@/types/Types";
-import { useGameStore } from "@/stores/gameStore";
 
 // 1. Helper to build deck with probabilities
-export function buildDeck(cards: DeckArry[]): DeckArry[] {
+function buildDeck(cards: DeckArry[]): DeckArry[] {
   const expandedDeck: DeckArry[] = [];
-
   cards.forEach((card) => {
     for (let i = 0; i < card.probability; i++) {
       expandedDeck.push({ ...card });
@@ -15,10 +14,18 @@ export function buildDeck(cards: DeckArry[]): DeckArry[] {
 }
 
 export const useDeck = () => {
+  const [deck, setDeck] = useState<DeckArry[]>(() => buildDeck(cardDeck));
+  const [drawnCard, setDrawnCard] = useState<DeckArry | null>(null);
+  const [click, setClick] = useState<number>(0);
+
+  const resetDeck = () => {
+    setClick(0);
+    setDrawnCard(null);
+    setDeck(buildDeck(cardDeck));
+  };
+
   const drawCard = () => {
-    const deck = useGameStore((state) => state.deck);
-    const setDeck = useGameStore((state) => state.setDeck as (deck: DeckArry[]) => void);
-    const setDrawnCard = useGameStore((state) => state.setDrawnCard);
+    setClick((prev) => prev + 1);
 
     if (deck.length === 0) {
       setDeck(buildDeck(cardDeck));
@@ -33,8 +40,5 @@ export const useDeck = () => {
     setDeck(newDeck);
   };
 
-  return {
-    drawCard,
-    buildDeck,
-  };
+  return { deck, drawnCard, click, resetDeck, drawCard };
 };

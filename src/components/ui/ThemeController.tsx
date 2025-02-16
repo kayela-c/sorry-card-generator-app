@@ -1,10 +1,11 @@
 "use client";
 import React from "react";
 import { themes } from "@/styles/themes";
-import { useEffect } from "react";
-import { themeChange } from "theme-change";
+import { useThemeStore } from "@/stores/themeStore";
 
 const ThemeController = () => {
+  const { theme, setTheme } = useThemeStore();
+
   return (
     <div className="navbar-start">
       <div className="dropdown">
@@ -28,22 +29,18 @@ const ThemeController = () => {
           tabIndex={0}
           className="menu dropdown-content z-[1] mt-3 w-52 rounded-box bg-base-300 p-2 text-base-content shadow-2xl"
         >
-          {
-            // Theme options go here
-            //map the daisy ui themes to li elements
-            themes.map((theme) => (
-              <li key={theme}>
-                <input
-                  key={theme}
-                  type="radio"
-                  name="theme-dropdown"
-                  className="theme-controller btn btn-ghost btn-sm btn-block justify-start capitalize"
-                  aria-label={theme}
-                  value={theme}
-                />
-              </li>
-            ))
-          }
+          {themes.map((themeName) => (
+            <li key={themeName}>
+              <button
+                className={`btn btn-ghost btn-sm btn-block justify-start capitalize ${
+                  theme === themeName ? "btn-active" : ""
+                }`}
+                onClick={() => setTheme(themeName)}
+              >
+                {themeName}
+              </button>
+            </li>
+          ))}
         </ul>
       </div>
     </div>

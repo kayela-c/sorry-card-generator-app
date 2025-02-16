@@ -1,16 +1,9 @@
 "use client";
 import React from "react";
-import { cardDeck } from "@/data/cards";
-import { useGameStore } from "@/stores/gameStore";
+import { useDeckStore } from "@/stores/deckStore";
 
 const ResetBtn = () => {
-  const { setClick, setDrawnCard, setDeck, buildDeck } = useGameStore();
-
-  const resetDeck = () => {
-    setClick(0);
-    setDrawnCard(null);
-    setDeck(buildDeck(cardDeck));
-  };
+  const { resetDeck } = useDeckStore();
 
   return (
     <button
