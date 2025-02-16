@@ -1,31 +1,16 @@
 "use client";
 import React from "react";
 import clsx from "clsx";
-import Image from "next/image";
 import Card from "./Card";
-import { useDeck } from "@/hooks/useDeck";
 import ResetBtn from "../common/ResetBtn";
-
-//reload button reloads the page when clicked
-export const ReloadBtn = () => {
-  const reloadPage = () => {
-    window.location.reload();
-  };
-  return (
-    <button
-      onClick={reloadPage}
-      className="btn btn-primary text-primary-content"
-    >
-      Reset Deck
-    </button>
-  );
-};
+import { useGameStore } from "@/stores/gameStore";
 
 //reset button needs to use state management to reset the deck
 
 const SorryDeckUI = () => {
-  const { deck, drawnCard, click, drawCard } = useDeck();
-
+  const drawnCard = useGameStore((state) => state.drawnCard);
+  const click = useGameStore((state) => state.click);
+  const drawCard = useGameStore((state) => state.drawCard);
   return (
     <>
       {!drawnCard && ( //show allert
@@ -47,18 +32,13 @@ const SorryDeckUI = () => {
           {click === 0 ? (
             <div className="card my-3 flex h-96 w-60 justify-between bg-slash-four p-3 font-bold text-black drop-shadow-xl transition-all duration-700 ease-in-out">
               <div className="translate-y-40 -rotate-90">
-                <Image
-                  src={require("@/img/sorry_logo.png")}
-                  alt="sorry logo"
-                  height={0}
-                  width={0}
-                />
+                <div className="text-4xl text-white shadow-lg">Lo Siento</div>
               </div>
             </div>
           ) : drawnCard ? (
             <Card drawnCard={drawnCard} click={click} />
           ) : (
-            <ReloadBtn />
+            <ResetBtn />
           )}
         </button>
       </div>
