@@ -36,18 +36,6 @@ Set up state to use for animation. Effect and setEffect.
 
 Card will play shake animation when clicked.
 
-
-[ ] fix eslink and drizzle config issues so that app can be deployed
+[ ] create reset button
 [ ] include a card counter to make sure the right number of cards are being pulled
 [ ] maybe change animation
-
-
-Created New Card Game Memory Card
-fetched emoji data from Api
-mapped to 5 cards
-duplicated cards
-shuffled cards using algorithm
-
-created levelDifficulty variable to store the max cars rendered
-
-Card Not flipping 
